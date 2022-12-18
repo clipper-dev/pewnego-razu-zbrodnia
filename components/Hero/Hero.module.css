@@ -1,0 +1,103 @@
+.container {
+    width: 100%;
+    background: var(--gradientHero);
+    display: flex;
+    flex-direction: column;    
+}
+.container h1 {
+    font-size:3rem;
+}
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px #00000030;
+    object-fit: cover;
+    object-position: 0 0px;
+}
+.name {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.host{
+    font-style: italic;
+}
+.description {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+}
+.description p {
+    margin: 0.5rem;
+    line-height: 2rem;
+    font-size: 1.4rem;
+    color: var(--fontDescription);
+    max-width: 50ch;
+}
+.description img {
+    margin: 0.5rem 0;
+    width: min(95vw, 400px);
+    height: min(95vw, 400px);
+    object-fit: cover;
+    object-position: 0 0px;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 4px #00000030, 10px 10px 20px #00000050;
+}
+.links {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+.links a {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--fontMain);
+    color: var(--backgroundMain);
+    font-weight: 600;
+    font-size: 1.5rem;
+    transition: all 0.1s ease-in-out;
+}
+.links a:hover {
+    scale: 1.05;
+    filter: brightness(0.9);
+}
+.spotify {
+
+}
+.spotifyIcon{
+    color: green;
+}
+@media screen and (max-width: 768px) {
+    .container h1 {
+        font-size: 2rem;
+    }
+    .description {
+        flex-direction: column;
+        align-items: center;
+    }  
+    .description p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .links a {
+        font-size: 1.2rem;
+        padding: 0.7rem 1.5rem;
+
+    }
+}

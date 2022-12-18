@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.6rem 2rem;
+    background-color: var(--backgroundNavbar);
+    color: var(--fontMain);
+}
+.navbarLeft, .navbarRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.navbarLeft {
+    gap: 1rem;
+}
+
+.navbarRight {
+    gap: 2rem;
+}
+.navbarLeft span {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.navbarRight span, .navbarRight div {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.link {
+    padding: 0.2rem;
+    color: var(--fontMain);
+    transition: all 0.2s ease-in-out;
+    border-bottom: 2px solid transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+.chosen {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+.link:hover {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+@media screen and (max-width: 768px) {
+    .navbarLeft span, .navbarRight span {
+        display: none;
+    }    
+}

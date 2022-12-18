@@ -4,8 +4,9 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--backgroundMain);
+  color: var(--fontMain);
 }
-
 a {
   color: inherit;
   text-decoration: none;
@@ -15,12 +16,31 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+:root {
+  --fontMain: #fafafa;
+  --fontDescription: #e0cbcb;
+  --fontContrast: #000000;
+  --fontItem: rgb(163, 176, 191);
+
+  --accent: rgb(208, 89, 221);
+
+  --backgroundMain: #000000;
+  --backgroundItem: #141414;
+  --backgroundNavbar: #000000;
+  --backgroundAdditional: #1a1a1a;
+
+  --gradientHero: linear-gradient(
+    80deg,
+    hsl(304deg 88% 55%) 0%,
+    hsl(304deg 80% 59%) 20%,
+    hsl(304deg 72% 62%) 29%,
+    hsl(304deg 63% 63%) 36%,
+    hsl(303deg 53% 65%) 43%,
+    hsl(302deg 43% 65%) 50%,
+    hsl(305deg 49% 64%) 57%,
+    hsl(308deg 55% 62%) 64%,
+    hsl(310deg 61% 59%) 71%,
+    hsl(311deg 67% 56%) 80%,
+    hsl(311deg 73% 51%) 100%
+  );
 }
