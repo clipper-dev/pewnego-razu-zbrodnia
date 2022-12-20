@@ -3,29 +3,31 @@ export const getEpisodes = async (access_token : string) => {
         headers: {
             Authorization: `Bearer ${access_token}`,
         },
-    });
-    const data = await response.json();
-    return data.items;
-};
-
-export async function getAccessToken() {
-    const base64 = require('base-64');
-  
-    // Encode the client ID and client secret in base64
-    const encoded = base64.encode(`${process.env.CLIENT_ID}:${process.env.CLIENT_SECRET}`);
-  
-    try {
-      const response = await fetch('https://accounts.spotify.com/api/token', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Basic ${encoded}`,
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: 'grant_type=client_credentials',
+        cache: "no-store"
       });
-  
       const data = await response.json();
-      const accessToken = data.access_token;
+      return data.items;
+    };
+    
+    export async function getAccessToken() {
+      const base64 = require('base-64');
+      
+      // Encode the client ID and client secret in base64
+      const encoded = base64.encode(`${process.env.CLIENT_ID}:${process.env.CLIENT_SECRET}`);
+      
+      try {
+        const response = await fetch('https://accounts.spotify.com/api/token', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Basic ${encoded}`,
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: 'grant_type=client_credentials',
+          cache: "no-store"
+        });
+        
+        const data = await response.json();
+        const accessToken = data.access_token;
       return accessToken;
     } catch (error) {
       console.error(error);
